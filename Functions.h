@@ -7,9 +7,9 @@
 class Functions
 {
 	public:
-		double getBeta(std::vector<Point> &points,int num_points);
-		double getAplha(std::vector<Point> &points,int num_points,double beta);
-		double leastsquareError(std::vector<Point> &points,int size);
+		double getBeta(std::vector<Point> &points,int start,int num_points);
+		double getAlpha(std::vector<Point> &points,int start,int num_points,double beta);
+		double leastsquareError(std::vector<Point> &points,int start,int size);
 };
 
 #endif

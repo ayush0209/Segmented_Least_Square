@@ -4,13 +4,13 @@
 #include<vector>
 #include"Point.h"
 
-class PointOps
+class PointsOps
 {
 	public:
-		double PointsOps::getXsum(std::vector<Point> &points,int num_points);
-		double PointsOps::getYsum(std::vector<Point> &points,int num_points);
-		double PointsOps::getXYsum(std::vector<Point> &points,int num_points);
-		double PointsOps::getXsquaredsum(std::vector<Point> &points,int num_points);
+		double getXsum(std::vector<Point> &points,int start,int num_points);
+		double getYsum(std::vector<Point> &points,int start,int num_points);
+		double getXYsum(std::vector<Point> &points,int start,int num_points);
+		double getXsquaredsum(std::vector<Point> &points,int start,int num_points);
 };
 
 #endif

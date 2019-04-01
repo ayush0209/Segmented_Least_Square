@@ -18,7 +18,7 @@ void SegementedLeastSquares(std::vector<Point> points)
 		for(j=i;j<num_points;j++)
 		{
 			size=j-i+1;
-			error[i][j]=functionsAPI.leastsquareError(points.begin()+i,size);
+			error[i][j]=functionsAPI.leastsquareError(points,i,size);
 		}
 	}
 }
