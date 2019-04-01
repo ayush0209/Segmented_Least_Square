@@ -1,8 +1,8 @@
 #include<stdint.h>
-#include<vector.h>
-#include<cmath.h>
+#include<vector>
+#include<cmath>
 #include"Point.h"
-#include"PointOps.h"
+#include"PointsOps.h"
 #include"Functions.h"
 using namespace std;
 
@@ -15,7 +15,7 @@ double Functions::getBeta(std::vector<Point> &points,int num_points)
 	mean_Y=pointsopsAPI.getYsum(std::vector<Point> &points,int num_points)/num_points;
 	sum_XY=pointsopsAPI.getXYsum(std::vector<Point> &points,int num_points);
 	sum_Xsquared=pointsopsAPI.getXsquaredsum(std::vector<Point> &points,int num_points);
-	beta=(sum_XY-(num_points*mean_X*mean_Y))/(sum_Xsquared-(num_points*pow(mean_X),2))
+	beta=(sum_XY-(num_points*mean_X*mean_Y))/(sum_Xsquared-(num_points*pow(mean_X),2));
 	return beta;
 }
 
@@ -41,14 +41,14 @@ double Functions::leastsquareError(std::vector<Point> &points,int num_points)
 	
 	for(i=0;i<num_points;i++)
 	{
-		predicted_value=alpha+(beta*points[i].getX())
+		predicted_value=alpha+(beta*points[i].getX());
 		predictions.push_back(predicted_value);
 	}
 
 	for(i=0;i<num_points;i++)
 	{
-		difference=points[i].getY()-predictions[i]
-		error+=pow(difference,2)
+		difference=points[i].getY()-predictions[i];
+		error+=pow(difference,2);
 	}
 
 	return error;

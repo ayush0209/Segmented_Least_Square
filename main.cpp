@@ -1,7 +1,7 @@
 #include<stdint.h>
-#include<vector.h>
+#include<vector>
 #include"Point.h"
-#include"PointOps.h"
+#include"PointsOps.h"
 #include"Functions.h"
 using namespace std;
 
@@ -10,7 +10,7 @@ Functions functionsAPI;
 void SegementedLeastSquares(std::vector<Point> points)
 {
 	int i,j,size;
-	num_points=points.size();
+	int num_points=points.size();
 	double error[num_points][num_points];
 
 	for(i=0;i<num_points;i++)

@@ -1,7 +1,7 @@
 #ifndef POINTSOPS_H
 #define POINTSOPS_H
 #include<stdint.h>
-#include<vector.h>
+#include<vector>
 #include"Point.h"
 
 class PointOps

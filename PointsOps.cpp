@@ -1,6 +1,6 @@
 #include<stdint.h>
-#include<vector.h>
-#include<cmath.h>
+#include<vector>
+#include<cmath>
 #include"Point.h"
 #include"PointsOps.h"
 using namespace std;
@@ -12,7 +12,7 @@ double PointsOps::getXsum(std::vector<Point> &points,int num_points)
 	{
 		sumX+=points[i].getX();
 	}
-	return sumX
+	return sumX;
 }
 
 double PointsOps::getYsum(std::vector<Point> &points,int num_points)
@@ -22,7 +22,7 @@ double PointsOps::getYsum(std::vector<Point> &points,int num_points)
 	{
 		sumY+=points[i].getY();
 	}
-	return sumY
+	return sumY;
 }
 
 double PointsOps::getXYsum(std::vector<Point> &points,int num_points)
@@ -32,7 +32,7 @@ double PointsOps::getXYsum(std::vector<Point> &points,int num_points)
 	{
 		sumXY+=(points[i].getX()*points[i].getY());
 	}
-	return sumXY
+	return sumXY;
 }
 
 
@@ -43,5 +43,5 @@ double PointsOps::getXsquaredsum(std::vector<Point> &points,int num_points)
 	{
 		sumX2+=pow(points[i].getX(),2);
 	}
-	return sumX2
+	return sumX2;
 }
