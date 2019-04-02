@@ -1,6 +1,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
-#include<stdint.h>
+#include<stdio.h>
 #include<vector>
 #include"Point.h"
 
