@@ -1,1 +1,1 @@
-# Segmented_Least_Square
+# Segmented_Least_Squares
