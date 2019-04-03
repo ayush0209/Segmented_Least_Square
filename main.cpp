@@ -65,7 +65,7 @@ void SegementedLeastSquares(std::vector<Point> points,double C)
 
 int main(int argc,char** argv)
 {
-	std::ifstream input("./input/input.txt");
+	std::ifstream input("./input/input1.txt");
 	vector<Point> points;
 	string line_data;
 	int Flag=0;
