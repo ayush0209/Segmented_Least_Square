@@ -51,14 +51,14 @@ void SegementedLeastSquares(std::vector<Point> points,double C)
 	std::ofstream output("./output/outputSegments.txt");
 	std::ofstream output2("./output/outputLines.txt");
 	tempIndex=num_points;
-	while(tempIndex!=0)
+	while(tempIndex!=1)
 	{
 		output<<startIndex[tempIndex]<<" "<<tempIndex<<"\n";
 		size=tempIndex-startIndex[tempIndex]+1;
 		beta=functionsAPI.getBeta(points,startIndex[tempIndex]-1,size);
 		alpha=functionsAPI.getAlpha(points,startIndex[tempIndex]-1,size,beta);
 		output2<<alpha<<" "<<beta<<"\n";
-		tempIndex=startIndex[tempIndex]-1;
+		tempIndex=startIndex[tempIndex];
 	}
 		
 }
