@@ -1,7 +1,9 @@
 #ifndef POINT_H
 #define POINT_H
 #include <iostream>
-
+/*! \class Point
+    \brief This defines a 2-D point with common functionalities to set and retrieve coordinate values
+*/
 class Point
 {
 	public:

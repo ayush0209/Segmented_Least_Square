@@ -7,7 +7,12 @@
 using namespace std;
 
 PointsOps pointsopsAPI;
-
+/*! This function calculates beta for the equation of line of the form y=(beta)*x + (alpha)
+\param points set of input points
+\param start This is the starting index for points in a new line segment
+\param num_points number of points
+\return beta as a double value is returned
+*/
 double Functions::getBeta(std::vector<Point> &points,int start,int num_points)
 {
 	double mean_X,mean_Y,beta,sum_XY,sum_Xsquared;
@@ -19,6 +24,13 @@ double Functions::getBeta(std::vector<Point> &points,int start,int num_points)
 	return beta;
 }
 
+/*! This function calculates alpha for the equation of line of the form y=(beta)*x + (alpha)
+\param points set of input points
+\param start This is the starting index for points in a new line segment
+\param num_points number of points
+\param this is the already claculated beta value
+\return alpha as a double value is returned
+*/
 double Functions::getAlpha(std::vector<Point> &points,int start,int num_points,double beta)
 {
 	double mean_X,mean_Y,alpha;
@@ -28,6 +40,12 @@ double Functions::getAlpha(std::vector<Point> &points,int start,int num_points,d
 	return alpha;
 }
 
+/*! This function calculates value of error function for the line y=(beta)*x + (alpha)
+\param points set of input points
+\param start This is the starting index for points in a new line segment
+\param num_points number of points
+\return It returns least square error as a double value
+*/
 double Functions::leastsquareError(std::vector<Point> &points,int start,int num_points)
 {
 	int i;

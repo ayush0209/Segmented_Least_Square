@@ -3,13 +3,19 @@
 #include <fstream>
 #include <sstream>
 #include<vector>
+#include <algorithm>
 #include"Point.h"
 #include"PointsOps.h"
 #include"Functions.h"
 using namespace std;
 
+//! This API provides the basic functions calculating paramters and error for an equation of line
 Functions functionsAPI;
 
+/*! This function gives the appropriate number of line segments with regard to cost of adding a line segment and error value of a line equation using the dynamic programming method
+\param points The input set of points
+\param C The cost of adding an extra line segment
+*/
 void SegementedLeastSquares(std::vector<Point> points,double C)
 {
 	int i,j,size,tempIndex;
@@ -48,8 +54,9 @@ void SegementedLeastSquares(std::vector<Point> points,double C)
 		}
 	}
 
-	std::ofstream output("./output/outputSegments.txt");
-	std::ofstream output2("./output/outputLines.txt");
+
+	std::ofstream output("./output/outputSegmentsC:"+to_string(C)+".txt");
+	std::ofstream output2("./output/outputLinesC:"+to_string(C)+".txt");
 	tempIndex=num_points;
 	while(tempIndex!=1)
 	{
@@ -63,9 +70,13 @@ void SegementedLeastSquares(std::vector<Point> points,double C)
 		
 }
 
+bool sortByX(Point a,Point b){
+	return (a.getX() < b.getX());
+}
+
 int main(int argc,char** argv)
 {
-	std::ifstream input("./input/input1.txt");
+	std::ifstream input("./input/input2.txt");
 	vector<Point> points;
 	string line_data;
 	int Flag=0;
@@ -84,5 +95,11 @@ int main(int argc,char** argv)
 		line_stream>>x>>y;
 		points.push_back(Point(x,y));
 	}
-	SegementedLeastSquares(points,3);
+
+	sort(points.begin(),points.end(),sortByX);
+	
+	double c[13]={0.500000,1.000000,2.000000,3.500000,5.000000,8.000000,10.000000,15.000000,20.000000,25.000000,30.000000,50.000000,100.000000};
+	for(int i=0;i<13;i++){
+		SegementedLeastSquares(points,c[i]);
+	}
 }
