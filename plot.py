@@ -21,11 +21,7 @@ if __name__=='__main__':
 		len=0
 		for segment in reversed(segmentsFile.readlines()):
 			# print(line)
-			if(len==0):
-				segments.append((int)(segment.split(" ")[0]))
-				segments.append((int)(segment.split(" ")[1]))
-				len+=1
-				continue
+			segments.append((int)(segment.split(" ")[0]))
 			segments.append((int)(segment.split(" ")[1]))
 			len+=1
 		print(segments)
@@ -40,10 +36,13 @@ if __name__=='__main__':
 			len+=1
 		print(lines)
 		plt.scatter(pointsXFull,pointsYFull)
-		for i in range(segments.__len__()-1):
-			print(pointsXFull[segments[i]-1]),
-			print(pointsXFull[segments[i+1]-1])
-			plt.plot([pointsXFull[segments[i]-1],pointsXFull[segments[i+1]-1]],[pointsXFull[segments[i]-1]*lines[i][1]+lines[i][0],pointsXFull[segments[i+1]-1]*lines[i][1]+lines[i][0]])
+		for i in range(lines.__len__()):
+			print(segments.__len__())
+			print(segments[2*i]-1)
+			print(segments[2*i+1]-1)
+			print(pointsXFull[segments[2*i]-1]),
+			print(pointsXFull[segments[2*i+1]-1])
+			plt.plot([pointsXFull[segments[2*i]-1],pointsXFull[segments[2*i+1]-1]],[pointsXFull[segments[2*i]-1]*lines[i][1]+lines[i][0],pointsXFull[segments[2*i+1]-1]*lines[i][1]+lines[i][0]])
 		# plt.show()
 		plt.savefig(os.getcwd()+'/images/SLSoutput'+str(num)+'c:'+str('%.6f'%cval)+'.png')
 		plt.clf()

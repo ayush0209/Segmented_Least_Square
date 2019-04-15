@@ -60,12 +60,15 @@ void SegementedLeastSquares(std::vector<Point> points,double C)
 	tempIndex=num_points;
 	while(tempIndex!=1)
 	{
+		cout<<tempIndex<<" "<<startIndex[tempIndex]<<endl;
 		output<<startIndex[tempIndex]<<" "<<tempIndex<<"\n";
 		size=tempIndex-startIndex[tempIndex]+1;
 		beta=functionsAPI.getBeta(points,startIndex[tempIndex]-1,size);
 		alpha=functionsAPI.getAlpha(points,startIndex[tempIndex]-1,size,beta);
 		output2<<alpha<<" "<<beta<<"\n";
-		tempIndex=startIndex[tempIndex];
+		if(startIndex[tempIndex]==1)
+			break;
+		tempIndex=startIndex[tempIndex]-1;
 	}
 		
 }
